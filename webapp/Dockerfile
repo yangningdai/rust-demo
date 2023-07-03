@@ -18,7 +18,8 @@ RUN touch ./src/main.rs && cargo build --release --target x86_64-unknown-linux-m
 ######################
 ######  runner  ######
 ######################
-FROM alpine:3
+#FROM alpine:3
+FROM scratch
 COPY --from=builder /usr/src/webapp1/target/x86_64-unknown-linux-musl/release/webapp1 /app/
 #RUN echo "$(ls -l /app)"
 EXPOSE 5000
